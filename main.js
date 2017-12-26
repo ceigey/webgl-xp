@@ -8,7 +8,13 @@ let win
 
 function createWindow () {
   // Create the browser window.
-  win = new BrowserWindow({width: 800, height: 600});
+  // - CJ addition:
+  // https://github.com/electron/electron/blob/master/docs/api/frameless-window.md
+  win = new BrowserWindow({
+      width: 800, 
+      height: 600,
+      titleBarStyle: 'hidden',
+    });
 
   // and load the index.html of the app.
   win.loadURL(url.format({
